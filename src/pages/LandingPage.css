@@ -1,0 +1,40 @@
+.landing{max-width:960px; margin:0 auto; padding:0 1.2rem 3rem}
+.landing-header{display:flex; justify-content:space-between; align-items:center; padding:1.4rem 0}
+.landing-logo{font-size:1.15rem; font-weight:700; color:var(--verde-oscuro); display:flex; align-items:center; gap:.5rem}
+.landing-logo img{width:32px; height:32px; object-fit:contain; border-radius:6px}
+.landing-nav{display:flex; gap:.6rem}
+
+.landing-hero{text-align:center; padding:2.5rem 1rem 3rem}
+.landing-hero h1{font-size:1.9rem; color:var(--verde-oscuro); margin:0 0 .8rem; line-height:1.25}
+.landing-hero p{font-size:1rem; color:#4a5142; max-width:560px; margin:0 auto 1.6rem}
+.landing-cta{display:flex; gap:.7rem; justify-content:center; flex-wrap:wrap}
+
+.landing-section{padding:2.2rem 0}
+.landing-section h2{text-align:center; font-size:1.35rem; color:var(--verde-oscuro); margin:0 0 1.6rem}
+.landing-section-alt{background:#EFEBDD; border-radius:14px; margin:0 -1.2rem; padding:2.2rem 1.2rem}
+
+.landing-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1rem}
+.landing-card{background:#fff; border:1px solid var(--linea); border-radius:10px; padding:1.1rem}
+.landing-card h3{font-size:.95rem; color:var(--verde-cultivo); margin:0 0 .4rem}
+.landing-card p{font-size:.85rem; color:#6b7264; margin:0; line-height:1.45}
+
+.landing-pasos{display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.2rem}
+.landing-paso{text-align:center}
+.landing-paso-numero{
+  width:36px; height:36px; border-radius:50%; background:var(--verde-cultivo); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:700; margin:0 auto .6rem;
+}
+.landing-paso h3{font-size:.9rem; color:var(--verde-oscuro); margin:0 0 .3rem}
+.landing-paso p{font-size:.82rem; color:#6b7264; margin:0; line-height:1.4}
+
+.landing-contacto{text-align:center}
+.landing-contacto p{color:#6b7264}
+.landing-datos{margin-top:1rem; font-size:.85rem; color:#8a9280}
+
+.landing-footer{text-align:center; font-size:.75rem; color:#9a9a8a; padding-top:2rem}
+
+@media (prefers-color-scheme: dark){
+  .landing-card{background:#20241C; border-color:#333829}
+  .landing-section-alt{background:#181A15}
+  .landing-hero p{color:#c9d6c4}
+}

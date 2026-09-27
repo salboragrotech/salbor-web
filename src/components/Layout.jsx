@@ -21,6 +21,7 @@ export default function Layout() {
   return (
     <div>
       <header>
+        <img src="/logo.jpeg" alt="Salbor Agrotech" style={{ width: 34, height: 34, objectFit: 'contain', borderRadius: 6, background: '#fff', padding: 2 }} />
         <div>
           <h1>Salbor Agrotech</h1>
           <p>Control operativo y administrativo de fumigación</p>

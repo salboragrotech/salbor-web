@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 
+import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import RegistroClientePage from './pages/RegistroClientePage';
 
@@ -22,18 +23,14 @@ import RegistrarVueloPage from './pages/piloto/RegistrarVueloPage';
 import SolicitarPage from './pages/cliente/SolicitarPage';
 import MisInformesPage from './pages/cliente/MisInformesPage';
 
-function InicioSegunRol() {
-  const { usuario } = useAuth();
-  if (!usuario) return <Navigate to="/login" replace />;
-  const primeraPagina = { admin: 'clientes', piloto: 'mi-agenda', cliente: 'solicitar' }[usuario.rol];
-  return <Navigate to={`/${usuario.rol}/${primeraPagina}`} replace />;
-}
-
 export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          {/* Página pública de inicio: información de la empresa, visible para cualquiera */}
+          <Route path="/" element={<LandingPage />} />
+
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registro" element={<RegistroClientePage />} />
 
@@ -64,8 +61,8 @@ export default function App() {
             <Route path="mis-informes" element={<MisInformesPage />} />
           </Route>
 
-          <Route path="/" element={<InicioSegunRol />} />
-          <Route path="*" element={<InicioSegunRol />} />
+          {/* Cualquier otra ruta no reconocida vuelve al inicio */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
