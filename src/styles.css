@@ -1,0 +1,90 @@
+:root{
+  --verde-cultivo:#3F6B3A;
+  --verde-oscuro:#22331F;
+  --tierra:#C97A3D;
+  --cielo:#5C8DA6;
+  --crema:#F3F1E8;
+  --tinta:#20241C;
+  --linea:#D8D3C2;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0}
+body{background:var(--crema); color:var(--tinta); font-family:'Segoe UI',system-ui,-apple-system,sans-serif;}
+
+.login-screen{position:fixed; inset:0; background:var(--verde-oscuro); display:flex; align-items:center; justify-content:center; padding:1.2rem;}
+.login-box{background:#fff; border-radius:10px; padding:1.6rem 1.4rem; width:100%; max-width:360px}
+.login-box h1{font-size:1.2rem; margin:0 0 .1rem; color:var(--verde-oscuro)}
+.sub{font-size:.78rem; color:#6b7264; margin-bottom:1.1rem}
+.hint{font-size:.7rem; color:#8a9280; background:#F3F1E8; border-radius:6px; padding:.5rem .6rem; margin-top:.9rem}
+.error-msg{font-size:.78rem; color:#B3402A; margin-top:.5rem}
+.link{color:var(--verde-cultivo); font-weight:600; text-decoration:none; cursor:pointer}
+
+header{background:var(--verde-oscuro); color:var(--crema); padding:1.1rem 1.2rem; display:flex; align-items:center; gap:.6rem;}
+header h1{font-size:1.15rem; margin:0; font-weight:600}
+header p{margin:0; font-size:.78rem; color:#C9D6C4}
+header .userbox{margin-left:auto; text-align:right; font-size:.72rem; color:#C9D6C4}
+header .userbox .who{color:#fff; font-weight:600; font-size:.8rem}
+header .userbox button{margin-top:.3rem; background:none; border:1px solid #4C5E45; color:#C9D6C4; border-radius:5px; padding:.2rem .5rem; font-size:.68rem; cursor:pointer; font-family:inherit;}
+
+nav.tabs{display:flex; background:#fff; border-bottom:1px solid var(--linea); overflow-x:auto}
+nav.tabs a{flex:1; min-width:110px; padding:.75rem .5rem; text-align:center; font-size:.82rem; color:#6b7264; text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap;}
+nav.tabs a.active{color:var(--verde-cultivo); border-bottom-color:var(--verde-cultivo); font-weight:600}
+
+main{max-width:760px; margin:0 auto; padding:1.2rem 1rem 3rem}
+.card{background:#fff; border:1px solid var(--linea); border-radius:8px; padding:1rem 1.1rem; margin-bottom:1rem}
+.card h2{font-size:.95rem; margin:0 0 .8rem; color:var(--verde-oscuro)}
+.desc{font-size:.8rem;color:#6b7264;margin:-.4rem 0 .8rem}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:.7rem}
+label{display:block; font-size:.72rem; color:#6b7264; margin-bottom:.25rem}
+input,select,textarea{width:100%; padding:.5rem .55rem; border:1px solid var(--linea); border-radius:5px; font-size:.88rem; font-family:inherit; background:#FBFAF6;}
+textarea{resize:vertical; min-height:60px}
+.field{margin-bottom:.7rem}
+.btn{background:var(--verde-cultivo); color:#fff; border:none; border-radius:6px; padding:.65rem 1.1rem; font-size:.85rem; font-weight:600; cursor:pointer; font-family:inherit;}
+.btn.outline{background:none; border:1px solid var(--verde-cultivo); color:var(--verde-cultivo)}
+.btn.small{padding:.4rem .7rem; font-size:.75rem}
+.btn.block{width:100%}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+.row{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center}
+
+table{width:100%; border-collapse:collapse; font-size:.82rem}
+th{text-align:left; padding:.4rem .3rem; color:#6b7264; font-weight:600; font-size:.72rem; border-bottom:1px solid var(--linea)}
+td{padding:.5rem .3rem; border-bottom:1px solid #EEEAE0}
+.tag{display:inline-block; padding:.15rem .5rem; border-radius:20px; font-size:.68rem; background:#E6EEE1; color:var(--verde-cultivo)}
+.tag.pendiente{background:#F3E7D6; color:var(--tierra)}
+.empty{color:#9a9a8a; font-size:.85rem; text-align:center; padding:1.2rem 0}
+
+.report{background:#fff; border:1px solid var(--linea); border-radius:8px; overflow:hidden}
+.report-head{background:var(--verde-oscuro); color:var(--crema); padding:1rem 1.2rem}
+.report-head .cliente{font-size:1.1rem; font-weight:600}
+.report-head .meta{font-size:.75rem; color:#C9D6C4; margin-top:.2rem}
+.report-body{padding:1.1rem 1.2rem}
+.kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-bottom:1rem}
+.kpi{background:#F6F4EC; border-radius:6px; padding:.6rem; text-align:center}
+.kpi .num{font-size:1.25rem; font-weight:700; color:var(--verde-cultivo)}
+.kpi .lbl{font-size:.65rem; color:#6b7264}
+
+.cal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:.6rem}
+.cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:.3rem; text-align:center}
+.cal-grid .diasem{font-size:.62rem; color:#9a9a8a; padding:.2rem 0}
+.cal-grid button{aspect-ratio:1; border:1px solid var(--linea); background:#fff; border-radius:6px; font-size:.78rem; cursor:pointer; font-family:inherit; color:var(--tinta);}
+.cal-grid button.vacio{border:none; background:none; cursor:default}
+.cal-grid button.ocupado{background:#F3E1DA; border-color:#E0B6A8; color:#B3402A; cursor:not-allowed}
+.cal-grid button.pasado{background:#F0EEE6; color:#c2c2b5; cursor:not-allowed}
+.cal-grid button.elegido{background:var(--verde-cultivo); border-color:var(--verde-cultivo); color:#fff; font-weight:700}
+.cal-leyenda{display:flex; gap:.9rem; font-size:.68rem; color:#6b7264; margin-top:.6rem; flex-wrap:wrap}
+.cal-leyenda .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:.3rem}
+.cal-leyenda .libre{background:#fff; border:1px solid var(--linea)}
+.cal-leyenda .ocupado{background:#F3E1DA; border:1px solid #E0B6A8}
+.cal-leyenda .elegido{background:var(--verde-cultivo)}
+
+.notif{border-left:3px solid var(--verde-cultivo); background:#F6F4EC; border-radius:0 6px 6px 0; padding:.6rem .7rem; margin-bottom:.6rem; font-size:.82rem}
+.notif.reprogramada{border-left-color:var(--tierra); background:#FBF3EA}
+.notif .fecha{font-size:.68rem; color:#9a9a8a; margin-top:.2rem}
+
+.solicitud-card{border:1px solid var(--linea); border-radius:8px; padding:.8rem .9rem; margin-bottom:.8rem}
+.solicitud-card .top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:.5rem}
+.solicitud-card .top strong{font-size:.88rem}
+.solicitud-card .top span{font-size:.72rem; color:#6b7264}
+.solicitud-card .notas{font-size:.78rem; color:#6b7264; margin-bottom:.6rem; font-style:italic}
+
+.cargando{padding:2rem; text-align:center; color:#6b7264}
